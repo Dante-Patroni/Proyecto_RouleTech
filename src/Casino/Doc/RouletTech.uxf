@@ -1,0 +1,87 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>700</x><y>50</y><w>210</w><h>70</h></coordinates><panel_attributes>Principal
+--
++main
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>700</x><y>170</y><w>210</w><h>90</h></coordinates><panel_attributes>RuletaMenuPrincipal
+--
+
+--
+ + RuletaMenuPrincipal()*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>800</x><y>110</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>350</y><w>410</w><h>150</h></coordinates><panel_attributes>GestorDeImpresiones
+--
+
+--
++  buscarJugador(Jugador[] jugadores, String nombre) : int
++ listarApuestasRonda(Jugador[] aJugadores): void
++mostrarJugadorEncontrado(Jugador[] aJugadores, String nombre):void
++ordenarPorFichas(Jugador[] aJugadores): void
++ordenarPorNombre(Jugador[] aJugadores): void
++mostrarInformeFinal(Jugador[] jugadores). void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>180</y><w>620</w><h>190</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;170;10;10;600;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>350</y><w>370</w><h>190</h></coordinates><panel_attributes>GestorDatos
+--
+
+--
++cargarJugadores(Jugador[] jugadores): void
++darDeBajaJugador(Jugador[] jugadores, String nombre). void
++cargarApuestaNumeros(Jugador jugador): void
++cargarApuestaColor(Jugador jugador): void
++cargarApuestaParidad(Jugador jugador):void
++cargarApuestaDocena(Jugador jugador): void
++validarFichas(Jugador jugador, int cantFichas). boolean
++cargarJugador(int i): Jugador</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>350</y><w>370</w><h>190</h></coordinates><panel_attributes>GestorJuego
+--
+-paridad: enumParidad[]
+-docena: enumDocena[]
+-color: enumColor[]
+-numero: int
+
+--
++inicializarParidad(): void
++inicializarDocena(): void
++inicializarColores(): void
++comprobarGanadores(Jugador[] jugadores, int numero): void
++mostrarResultadoRonda(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1220</x><y>350</y><w>340</w><h>220</h></coordinates><panel_attributes>Jugador
+--
+-apuestasNumeros[]: int
+-montos[]: int
+-apuestaColor: enumColor
+-apuestaParidad: enumParidad
+-apuestaDocena: enumDocena
+-numApuestas: int
+--
++apostarNumero(int numero, int fichas): void
++apostarColor(enumColor color, int fichas) : void
++apostarParidad(enumParidad paridad, int fichas). void
++apostarDocenas(enumDocenas docena, int fichas): void
++reiniciarApuestas(): void
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>250</y><w>220</w><h>120</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;100;200;10</additional_attributes></element><element><id>Relation</id><coordinates><x>870</x><y>250</y><w>150</w><h>120</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>130;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>900</x><y>230</y><w>380</w><h>140</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>360;120;360;20;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1220</x><y>0</y><w>210</w><h>190</h></coordinates><panel_attributes>Persona
+
+--
+-nombre: String
+#cantFichas: int
+activo: boolean
+--
++registrarJugador(String nombreJugador, int fichas): void
++void bajaJugador(): void
++actualizarFichas(int fichas):void
++toString(): String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1320</x><y>180</y><w>30</w><h>190</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>UMLClass</id><coordinates><x>230</x><y>580</y><w>210</w><h>100</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+enumColor
+--
+ROJO
+NEGRO
+SIN_APUESTA
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>580</y><w>210</w><h>100</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+enumDocena
+--
+PRIMERA
+SEGUNDA
+TERCERA
+SIN_APUESTA
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>720</x><y>580</y><w>210</w><h>100</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+enumParidad
+--
+PAR
+IMPAR
+SIN_APUESTA
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
